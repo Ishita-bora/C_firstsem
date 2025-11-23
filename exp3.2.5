@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, c, d;
+    int limit;
+    int n1, n2;
+
+    printf("Enter limit: ");
+    scanf("%d", &limit);
+
+    printf("Ramanujan numbers up to limit %d are:\n", limit);
+
+    // check all possible combinations
+    for (a = 1; a <= limit; a++) {
+        for (b = a; b <= limit; b++) {
+            for (c = a + 1; c <= limit; c++) {
+                for (d = c; d <= limit; d++) {
+                    n1 = a*a*a + b*b*b;
+                    n2 = c*c*c + d*d*d;
+
+                    if (n1 == n2) {
+                        printf("%d = %d^3 + %d^3 = %d^3 + %d^3\n", n1, a, b, c, d);
+                    }
+                }
+            }
+        }
+    }
+
+    return 0;
+}
