@@ -1,0 +1,12 @@
+#include <stdio.h>
+int globalVar = 10;
+void func1()
+{
+    printf("Inside function 1 , globalvar= %d\n", globalVar);
+}
+void func2()
+{
+    globalVar +=5;
+    printf("Inside function 2 , globalvar= %d\n", globalVar);
+}
+int main
